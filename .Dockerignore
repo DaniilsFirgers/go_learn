@@ -1,0 +1,28 @@
+# Compiled Object files
+*.o
+*.a
+*.exe
+*.out
+
+# Compiled Go binaries
+*.exe
+*.test
+*.prof
+
+# Dependency directories
+/vendor/
+/go.sum
+/go.mod
+
+# Output directories
+/bin/
+/dist/
+/release/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
