@@ -1,6 +1,6 @@
 ### GOLANG
 
-1. Minimalistic project structure
+_1. Minimalistic project structure_
 
 - Create a cmd folder in the root directory (contains main entry points)
 - Run go mod init (to initilize a new Go module)
@@ -8,10 +8,10 @@
 - Create an api folder in cmd folder (for JSON schema files, protocol definition files)
 - Create examples folder in the root directory (for usage examples)
 
-2. Visual Studio SetUp
+_2. Visual Studio Set Up_
 
-- Cmd+Shift+P and run Go: Install/Update Tools, then select all and click ok (all extensions are up)
+- Cmd+Shift+P and run `Go: Install/Update Tools`, then select all and click ok (all extensions are up)
 
-3. Enable rootless docker and run docker
+_3. Enable rootless docker and run docker_
 
 - `dockerd-rootless-setuptool.sh install`
