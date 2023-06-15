@@ -15,3 +15,7 @@ _2. Visual Studio Set Up_
 _3. Enable rootless docker and run docker_
 
 - `dockerd-rootless-setuptool.sh install`
+
+_4. Run docker conatiner_
+
+- `docker-compose up -d`
