@@ -1,0 +1,4 @@
+# profile for development environment
+
+server = "localhost"
+port = 4444

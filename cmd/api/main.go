@@ -1,15 +1,9 @@
 package main
 
 import (
-	"github.com/gofiber/fiber/v2"
+	"go-learn/internal/app"
 )
 
 func main() {
-	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World5!")
-	})
-
-	app.Listen(":4444")
+	app.Run()
 }

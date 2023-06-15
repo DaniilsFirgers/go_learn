@@ -3,6 +3,7 @@ module go-learn
 go 1.18
 
 require (
+	github.com/BurntSushi/toml v1.3.2 // indirect
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/gofiber/fiber/v2 v2.46.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect
