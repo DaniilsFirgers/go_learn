@@ -19,12 +19,16 @@ COPY . .
 # donwloads the go modules inside the go.mod file
 RUN go mod download
 
+# Install MongoDB dependencies
+RUN apk --no-cache add ca-certificates mongodb-tools
+
 # exposes port to the container
 EXPOSE 4444:4444
 
 #  downloads and installs CompileDeamon from github for automatic reload
 RUN go get github.com/githubnemo/CompileDaemon
 RUN go install github.com/githubnemo/CompileDaemon
+
 
 # execute CompileDeamon command which rebuilds the app usidng 'go build' and outputs the binary to '/build/app' and runs '/build/app'
 ENTRYPOINT CompileDaemon -build="go build -o /build/app ./cmd/api" -command="/build/app"
