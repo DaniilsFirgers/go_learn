@@ -2,9 +2,36 @@ version: '3'
 services:
   app:
     build:
-      context: .
+      context: ./server
       dockerfile: Dockerfile
     ports:
       - "4444:4444"
     volumes:
-      - ./:/app
+      - ./server:/app
+    depends_on:
+      - mongo
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017
+    links:
+      - mongo
+    networks:
+      - go-app
+  mongo:
+    container_name: mongodb
+    image: mongo:latest
+    volumes:
+      - mongodb_data:/data/db
+    # environment:
+    #   - "MONGO_INITDB_ROOT_USERNAME:username"
+    #   - "MONGO_INITDB_ROOT_PASSWORD:password"
+    ports:
+      - "5555:27017"
+    networks:
+      - go-app
+
+networks:
+  go-app:
+    driver: bridge
+
+volumes:
+  mongodb_data:
