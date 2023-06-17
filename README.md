@@ -16,6 +16,15 @@ _3. Enable rootless docker and run docker_
 
 - `dockerd-rootless-setuptool.sh install`
 
-_4. Run docker conatiner_
+_4. Build container_
 
-- `docker-compose up -d`
+- `docker-compose up -d` to run in detached mode
+- `docker-compose up --build` to build a container
+
+_5. Start the container_
+
+- `docker-compose start`
+
+_6. Stop the container_
+
+- `docker-compose stop`
