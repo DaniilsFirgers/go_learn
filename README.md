@@ -1,4 +1,4 @@
-### GOLANG
+### GOLANG FULL-STACK MOCK PROJECT
 
 _1. Minimalistic project structure_
 
