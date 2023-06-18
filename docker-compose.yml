@@ -10,14 +10,14 @@ services:
     volumes:
       - ./server:/app
     depends_on:
-      - mongo
+      - mongodb
     environment:
       - MONGODB_URL=mongodb://mongodb:27017
     links:
-      - mongo
+      - mongodb
     networks:
       - go-app
-  mongo:
+  mongodb:
     container_name: mongodb-container
     image: mongo:latest
     volumes:
@@ -27,6 +27,19 @@ services:
     #   - "MONGO_INITDB_ROOT_PASSWORD:password"
     ports:
       - "5555:27017"
+    networks:
+      - go-app
+  
+  client:
+    container_name: svelte-container
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
     networks:
       - go-app
 
